@@ -8,7 +8,7 @@ getPriceButton.addEventListener("click", function () {
     const numKmpassenger = Number(document.getElementById("kmPassenger").value);
     //mi salvo quanti anni ha il passeggero dall'input nell'html
     const numAnniPassenger = Number(document.getElementById("agePassenger").value);
-  
+
     /* Sulla base di queste info devo calcolare i prezzo totale del biglietto , secondo queste regole:
             il prezzo del biglietto è definito in base ai km (0.21€ al km)
             va applicato uno sconto del 20% per i minorenni
@@ -31,13 +31,19 @@ getPriceButton.addEventListener("click", function () {
     //modifico i dati del biglietto con quelli inseriti a mano
     const namePassenger = document.getElementById("namePassenger").value;
 
-  
+
     const lastNamePassenger = document.getElementById("lastNamePassenger").value;
 
-    document.getElementById("ticket_full_name").innerHTML= namePassenger + "  " + lastNamePassenger
+    document.getElementById("ticket_full_name").innerHTML = namePassenger + "  " + lastNamePassenger
+
+    const ticketDate = new Date()
+    document.getElementById("ticket_side_date").innerHTML = ticketDate.toDateString();
+    document.getElementById("ticket_date").innerHTML = ticketDate.toDateString();
+
+
 
     //l'output del prezzo finale va messo fuori in forma umana ( con max 2 decimali per indicare i centesimi sul prezzo )
-    document.getElementById("ticket_price").innerHTML=prezzoTot.toFixed(2) + " " + "€"
+    document.getElementById("ticket_price").innerHTML = prezzoTot.toFixed(2) + " " + "€"
     console.log(prezzoTot.toFixed(2));
 
 
